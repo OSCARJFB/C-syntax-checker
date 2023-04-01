@@ -58,11 +58,11 @@ int findOpeningBracket(char buffer[BUFFER_SIZE], int index, char bracket)
 
 int bracketResult(char buffer[BUFFER_SIZE], char err_msg[MSG_SIZE])
 {
-	int line = 1, len = 0;
+	int line = 1, len = 0, err = 0;
 
-	char msg1[MSG_SIZE] = "No matching opening/closing {} on line: \0";
-	char msg2[MSG_SIZE] = "No matching opening/closing () on line: \0";
-	char msg3[MSG_SIZE] = "No matching opening/closing [] on line: \0";
+	const char *msg1 = "No matching opening/closing {} on line: \0";
+	const char *msg2 = "No matching opening/closing () on line: \0";
+	const char *msg3 = "No matching opening/closing [] on line: \0";
 
 	for (int i = 0; i < BUFFER_SIZE - 1 && buffer[i] != '\0'; ++i)
 	{
@@ -72,21 +72,22 @@ int bracketResult(char buffer[BUFFER_SIZE], char err_msg[MSG_SIZE])
 		{
 			len = strlen(msg1);
 			strncpy(err_msg, msg1, len);
-			return line;
+			err = 1; 
 		}
 		else if (buffer[i] == '(' || buffer[i] == ')')
 		{
 			len = strlen(msg2);
 			strncpy(err_msg, msg2, len);
-			return line;
+			err = 1; 
 		}
 		else if (buffer[i] == '[' || buffer[i] == ']')
 		{
 			len = strlen(msg3);
 			strncpy(err_msg, msg3, len);
-			return line;
+			err = 1; 
 		}
 	}
 
-	return 0;
+	msg1 = msg2 = msg3 = NULL; 
+	return err ? line : 0;	
 }
