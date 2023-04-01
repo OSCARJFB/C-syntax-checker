@@ -3,13 +3,13 @@
     https://github.com/OSCARJFB
 */
 
-#ifndef VALIDATECOMMENTS_H
-#define VALIDATECOMMENTS_H
+#ifndef REMOVECOMMENTS_H
+#define REMOVECOMMENTS_H
 
 #include "main.h"
 
-int validateComments(char buffer[BUFFER_SIZE], char err_msg[MSG_SIZE]);
+void removeComments(char buffer[BUFFER_SIZE]);
 void readOneLiner(char buffer[BUFFER_SIZE]); 
 void readMultiLiner(char buffer[BUFFER_SIZE]); 
 
-#endif // VALIDATECOMMENTS_H
+#endif // REMOVECOMMENTS_H

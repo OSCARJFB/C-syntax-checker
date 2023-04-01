@@ -4,8 +4,9 @@
 */
 
 #include "main.h"
-#include "validateComments.h"
+#include "removeComments.h"
 #include "validateBrackets.h"
+#include "validateKeyWords.h"
 #include <stdio.h>
 
 int main(void)
@@ -14,18 +15,18 @@ int main(void)
 	int line = 0;
 
 	getTextInput(buffer);
-
-	line = validateComments(buffer, err_msg); 
-	if(line)
-	{
-		printf("Comment Err: %s%d\n", err_msg, line);
-	}
+	removeComments(buffer);
 
 	line = validateBrackets(buffer, err_msg);
 	if (line)
 	{
 		printf("Bracket Err: %s%d\n", err_msg, line);
 	}
+
+	line = validateKeyWords(buffer, err_msg);
+	{
+		printf("Bracket Err: %s%d\n", err_msg, line);
+	} 
 
 	return 0;
 }
