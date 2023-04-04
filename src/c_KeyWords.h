@@ -3,10 +3,8 @@
     https://github.com/OSCARJFB
 */
 
-#ifndef VALIDATEKEYWORDS_H
-#define VALIDATEKEYWORDS_H
-
-#include "main.h"
+#ifndef C_KEYWORDS_H
+#define C_KEYWORDS_H
 
 enum storageClasses
 {
@@ -27,13 +25,13 @@ enum dataTypes
 {
     kw_void = 434,        
     kw_char = 414,         
-    kw_int = 331,            
+    kw_int = 331, 
+    kw_short = 560,            
     kw_float = 534,  
     kw_long = 432,
     kw_double = 653,             
 };
 
-int validateKeyWords(char buffer[BUFFER_SIZE], char err_msg[MSG_SIZE]);
-inline int getKeyWordValue(const char *keyWord);
+/* More to be added. */
 
-#endif // VALIDATEKEYWORDS_H
+#endif // C_KEYWORDS_H

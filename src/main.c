@@ -4,9 +4,9 @@
 */
 
 #include "main.h"
-#include "removeComments.h"
+#include "validateComments.h"
 #include "validateBrackets.h"
-#include "validateKeyWords.h"
+#include "validateFunctions.h"
 #include <stdio.h>
 
 int main(void)
@@ -23,7 +23,7 @@ int main(void)
 		printf("Bracket Err: %s%d\n", err_msg, line);
 	}
 
-	line = validateKeyWords(buffer, err_msg);
+	line = validateFunctions(buffer, err_msg);
 	{
 		printf("Bracket Err: %s%d\n", err_msg, line);
 	} 
