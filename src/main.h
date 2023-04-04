@@ -1,3 +1,8 @@
+/*
+    Writen by: Oscar Bergström
+    https://github.com/OSCARJFB
+*/
+
 #ifndef MAIN_H
 #define MAIN_H
 

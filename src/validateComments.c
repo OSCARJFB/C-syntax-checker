@@ -3,7 +3,7 @@
 	https://github.com/OSCARJFB
 */
 
-#include "removeComments.h"
+#include "validateComments.h"
 #include "main.h"
 
 void removeComments(char buffer[BUFFER_SIZE])
